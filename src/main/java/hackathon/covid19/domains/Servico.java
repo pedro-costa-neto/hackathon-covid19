@@ -23,10 +23,12 @@ public class Servico implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String titulo;
     private String descricao;
 
-    public Servico(Integer id, String descricao) {
+    public Servico(Integer id, String titulo, String descricao, float avaliacao) {
         this.id = id;
+        this.titulo = titulo;
         this.descricao = descricao;
     }
     
