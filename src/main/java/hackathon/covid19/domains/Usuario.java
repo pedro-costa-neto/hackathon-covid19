@@ -38,6 +38,10 @@ public class Usuario implements Serializable {
         this.nivel = nivel.getCod();
     }
     
+    public void setNivel(UsuarioNivel nivel) {
+        this.nivel = nivel.getCod();
+    }
+
     public UsuarioNivel getNivel() {
         return UsuarioNivel.toEnum(this.nivel);
     }

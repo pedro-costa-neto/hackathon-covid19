@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hackathon.covid19.domains.Usuario;
+import hackathon.covid19.domains.enums.UsuarioNivel;
 import hackathon.covid19.repositories.UsuarioRepository;
 
 @Service
@@ -21,6 +22,8 @@ public class UsuarioService {
 
     public Usuario insert(Usuario obj) {
         obj.setId(null);
+        obj.setNivel(UsuarioNivel.CLIENTE);
+
         return repository.save(obj);
     }
 
