@@ -33,20 +33,11 @@ public class Profissional implements Serializable {
     @OneToOne
 	@JoinColumn (name = "usuario_id")
     private Usuario usuario;
-
-    @ManyToMany
-	@JoinTable ( 
-        name = "PROFISSIONAL_SERVICO",
-        joinColumns = @JoinColumn (name = "profissional_id"),
-        inverseJoinColumns = @JoinColumn (name = "servico_id")
-    )
-    private List<Servico> servicos;
     private String bio;
 
-    public Profissional(Integer id, Usuario usuario, List<Servico> servicos, String bio) {
+    public Profissional(Integer id, Usuario usuario, String bio) {
         this.id = id;
         this.usuario = usuario;
-        this.servicos = servicos;
         this.bio = bio;
     }
     
