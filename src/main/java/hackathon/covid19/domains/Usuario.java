@@ -1,11 +1,17 @@
 package hackathon.covid19.domains;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import hackathon.covid19.domains.enums.UsuarioNivel;
 import lombok.Data;
@@ -27,8 +33,18 @@ public class Usuario implements Serializable {
     private Integer id;
     private String nome;
     private String email;
+
+    @JsonIgnore
     private String senha;
     private Integer nivel;
+    
+    @ManyToMany
+	@JoinTable ( 
+        name = "USUARIO_SERVICO",
+        joinColumns = @JoinColumn (name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn (name = "servico_id")
+    )
+    private List<Servico> services;
 
     public Usuario(Integer id, String nome, String email, String senha, UsuarioNivel nivel) {
         this.id = id;
