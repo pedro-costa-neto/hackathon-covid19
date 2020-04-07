@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import hackathon.covid19.domains.Profissional;
-import hackathon.covid19.domains.Usuario;
 import hackathon.covid19.dtos.ProfissionalDTO;
 import hackathon.covid19.services.ProfissionalService;
-import hackathon.covid19.services.UsuarioService;
 
 @RestController
 @RequestMapping (value = "/user/profissional")
