@@ -6,6 +6,21 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
+    src: require("assets/img/theme/team-1-800x800.jpg"),
+    altText: ``,
+    caption: "",
+    header: ``
+  },{
+    src: require("assets/img/theme/team-2-800x800.jpg"),
+    altText: ``,
+    caption: "",
+    header: ``
+  },{
+    src: require("assets/img/theme/team-3-800x800.jpg"),
+    altText: ``,
+    caption: "",
+    header: ``
+  },{
     src: require("assets/img/theme/team-4-800x800.jpg"),
     altText: ``,
     caption: "",
@@ -13,23 +28,6 @@ const items = [
   }
 ];
 
-{/* <li style={mystyle}>
-            <img
-              alt="..."
-              className="img-fluid rounded-circle align-items-center"
-              src={require("assets/img/theme/team-4-800x800.jpg")}
-              style={style}
-            />
-            <br/>
-            <br/>
-            <small className="d-block text-uppercase font-weight-bold mb-4">
-              Psicóloga
-            </small>
-
-            <small className="d-block text-uppercase font-weight-bold mb-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            </small>
-            </li> */}
 
 class Carousel extends React.Component {
   render() {
@@ -37,15 +35,15 @@ class Carousel extends React.Component {
       <>
         <section className="section section-shaped">
          
-          <Container className="py-md">
+          <Container className="py-md" style={{width: "150px"}}>
             <Row className="justify-content-between align-items-center">
               
-            <UncontrolledCarousel items={items} />
+            <UncontrolledCarousel items={items}/>
              
             </Row>
           </Container>
           {/* SVG separator */}
-          {/* <div className="separator separator-bottom separator-skew">
+          <div className="separator separator-bottom separator-skew">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
@@ -56,7 +54,7 @@ class Carousel extends React.Component {
             >
               <polygon className="fill-white" points="2560 0 2560 100 0 100" />
             </svg>
-          </div> */}
+          </div>
         </section>
       </>
     );
